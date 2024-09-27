@@ -6,13 +6,14 @@ using namespace std;
 
 int main()
 {
-  array<int, 4> arr{1, 23, 4, 5};
+  array<int, 4> arr{1, 23, 4, 5}; // define and initialize the array
+  // array<int, 4> arr = {1,23,4,5}; // define and initialize the array
 
-  int size = arr.size();
+  int size = arr.size(); // returns the actual size of the array
   // cout << size;
-  auto first = arr.begin();
-  auto last = arr.end();
-  sort(arr.begin(), arr.end());
+  auto first = arr.begin();     // points to the starting index
+  auto last = arr.end();        // points after the last index not the last index
+  sort(arr.begin(), arr.end()); // from start to end sort elements
   // cout << arr.begin(); // returns address of the first element since it is a pointer
   // cout << arr.cbegin(); // same as begin() but with read only
   // cout << arr.crbegin();
