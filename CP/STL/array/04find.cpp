@@ -2,7 +2,6 @@
 #include <array>
 #include <algorithm>
 #include <iterator>
-#include <list>
 using namespace std;
 
 // sorting, iterating, find
@@ -31,6 +30,9 @@ int main()
     cout << toFind << " not found";
   }
   cout << endl;
+
+  // using binary search
+  cout << binary_search(arr1.begin(), arr1.end(), 10); // returns true of false, container needs to be sorted
 
   return 0;
 }
