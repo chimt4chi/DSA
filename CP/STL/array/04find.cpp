@@ -18,7 +18,7 @@ int main()
   cout << endl;
 
   // auto n = find(arr1.begin(), arr1.end(), 15); // find(start, end, varible)
-  char toFind = 'f';                               // target
+  char toFind = 'a';                               // target
   auto n = find(arr2.begin(), arr2.end(), toFind); // find(start, end, varible)
 
   if (n != arr2.end())
