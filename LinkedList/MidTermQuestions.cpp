@@ -1,5 +1,9 @@
+/**
+ * Wave Question from T2-Mid Term Evaluation. 
+ * 
+ */
 #include<iostream> 
-//#include<SinglyLinkedList.cpp>
+
 using namespace std; 
 
 class SNode
@@ -93,7 +97,7 @@ bool checkWaveSom(SNode* head){
     }
     return true;
 }
-
+//TODO Check the code for multiple test cases
 int main()
 {
     SinglyLinkedList sll;
