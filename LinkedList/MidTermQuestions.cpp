@@ -1,5 +1,6 @@
 /**
- * Wave Question from T2-Mid Term Evaluation. 
+ * Wave Question from T2-Mid Term Evaluation. checkWave(SNode* head) and checkWaveSom(SNode* head)
+ * Reverse LinkedList. testReverseList()
  * 
  */
 #include<iostream> 
@@ -64,10 +65,21 @@ class SinglyLinkedList
         SNode* dummy=head;
         while(dummy!=NULL)
         {
-            cout<<dummy->data<<" ";
+            cout<<dummy->data<<" -> ";
             dummy=dummy->next;
         }
         cout<<endl;    
+    }
+
+    void printList(SNode* head)
+    {
+        SNode* dummy=head;
+        while(dummy!=NULL)
+        {
+            cout<<dummy->data<<" -> ";
+            dummy=dummy->next;
+        }
+        cout<<endl;
     }
 };
 
@@ -97,8 +109,32 @@ bool checkWaveSom(SNode* head){
     }
     return true;
 }
-//TODO Check the code for multiple test cases
-int main()
+
+//return head of reversed linkedList
+SNode* reverse(SNode* head) 
+{
+  
+  if(head==NULL || head->next==NULL)
+    return head;
+  
+  SNode* p=NULL;
+  SNode* c=head;
+  SNode* n=head->next;
+  
+  while(c!=NULL)
+  {
+    c->next=p;
+    p=c;
+    c=n;
+    if(n!=NULL)
+      n=n->next;
+  }
+  head=p;
+  
+  return head;
+}
+
+void testWave()
 {
     SinglyLinkedList sll;
     sll.insertAtEnd(2);
@@ -110,4 +146,26 @@ int main()
     sll.printList();
     cout<<"Has Wave(Rohit) : "<<checkWave(sll.getHead())<<endl;
     cout<<"Has Wave(Som) : "<<checkWaveSom(sll.getHead())<<endl;
+
+}
+
+void testReverseList()
+{
+    SinglyLinkedList sll;
+    sll.insertAtEnd(1);
+    sll.insertAtEnd(2);
+    sll.insertAtEnd(3);
+    sll.insertAtEnd(4);
+    sll.insertAtEnd(5);
+    
+    SNode* reversedHead = reverse(sll.getHead());
+    sll.printList(reversedHead);
+}
+
+//TODO Check the code for multiple test cases
+int main()
+{
+    //testWave();
+    testReverseList();
+    return 0;    
 }
