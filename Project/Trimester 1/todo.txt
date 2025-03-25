@@ -1,0 +1,9 @@
+read from the 64 files given
+identify top 100 frequently occurring words in a text files
+consider only numeric and alphabet character
+convert the small alphabets into capital form of the text files
+
+Normalize the word count of a file by dividing total number of words in the file.
+
+remove commonly occurring six specific words “a”, “and”, “an” , “of” “in” and
+“the” from the file at the time of counting frequent word
