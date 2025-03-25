@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Q. You are given a 3 * 3 matrix (2d-array) that represents the final situation of a Tic Tac Toe. Your task is to write a program that finds out the winner in case the match ended in a win. If the winner is 'x', print x. If the winner is 'o' print o. In case the match is tied print Tie.
+
+int main()
+{
+  int n = 3;
+  char x = 'x';
+  char o = 'o';
+  char arr[n][n] = {};
+
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      cin >> arr[i][j];
+    }
+  }
+
+  bool x_wins = false, o_wins = false;
+
+  for (int i = 0; i < n; i++)
+  {
+    if (arr[i][0] == arr[i][1] && arr[i][1] == arr[i][2])
+    {
+      if (arr[i][0] == x)
+        x_wins = true;
+      if (arr[i][0] == o)
+        o_wins = true;
+    }
+  }
+
+  for (int i = 0; i < n; i++)
+  {
+    if (arr[0][i] == arr[1][i] && arr[1][i] == arr[2][i])
+    {
+      if (arr[0][i] == x)
+        x_wins = true;
+      if (arr[0][i] == o)
+        o_wins = true;
+    }
+  }
+
+  if (arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2])
+  {
+    if (arr[0][0] == x)
+      x_wins = true;
+    if (arr[0][0] == o)
+      o_wins = true;
+  }
+  if (arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0])
+  {
+    if (arr[0][2] == x)
+      x_wins = true;
+    if (arr[0][2] == o)
+      o_wins = true;
+  }
+
+  if (x_wins)
+  {
+    cout << "x" << endl;
+  }
+  else if (o_wins)
+  {
+    cout << "o" << endl;
+  }
+  else
+  {
+    cout << "draw" << endl;
+  }
+
+  return 0;
+}
