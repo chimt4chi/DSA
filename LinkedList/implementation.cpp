@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node
@@ -68,6 +68,39 @@ Node *deleteNode(Node *head, int x)
   temp->next = temp->next->next;
   delete toDelete;
   return head;
+}
+
+Node *rotate(Node *head, int k)
+{
+  if (!head || k == 0)
+    return head;
+
+  // Step 1: Find the length and tail
+  Node *tail = head;
+  int len = 1;
+  while (tail->next)
+  {
+    tail = tail->next;
+    len++;
+  }
+
+  // Step 2: Make the list circular
+  tail->next = head;
+
+  // Step 3: Find the new tail: (len - k % len - 1)th node
+  k = k % len;
+  int stepsToNewTail = len - k;
+  Node *newTail = head;
+  for (int i = 1; i < stepsToNewTail; i++)
+  {
+    newTail = newTail->next;
+  }
+
+  // Step 4: Set new head and break the loop
+  Node *newHead = newTail->next;
+  newTail->next = nullptr;
+
+  return newHead;
 }
 
 void print(Node *head)
