@@ -32,6 +32,8 @@
 *.app
 *.s
 
+*.png
+
 #VS Code Configurations
 .vscode
 /.metadata/
