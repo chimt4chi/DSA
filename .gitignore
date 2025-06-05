@@ -32,6 +32,9 @@
 *.app
 *.s
 
+*.png
+*.jpg
+*.jpeg
 /50+days_badge.png
 
 #VS Code Configurations
